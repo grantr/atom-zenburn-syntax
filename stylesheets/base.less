@@ -6,18 +6,19 @@
 @import "colors";
 
 .editor-colors {
-  background-color: @base03;
-  color: @base0;
+  background-color: #3f3f3f; // background of the editor pane
+  color: #dcdccc; // default foreground (text) color for editor and gutter numbers
 }
 
 .editor {
   .invisible-character,
   .indent-guide {
-    color: @base01;
+    color: #5b605e; // indent and invisible chars like newlines
   }
 
   .gutter {
-    background-color: @base02;
+    background-color: #262626;
+    color: #9fafaf;
   }
 
   .gutter .line-number {
@@ -27,65 +28,91 @@
   .gutter .line-number.fold,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @magenta;
+    color: @magenta; // fold marker and fold line numbers in the gutter
   }
 
   .cursor {
-    border-color: @base3;
+    border-color: #8faf9f;
+    border-width: medium;
+    // background-color: #8faf9f;
+    // color: #000d18;
+    opacity: 0.4;
+    // border-color: @base3; // blinking cursor bar
   }
 
   .selection .region {
-    background-color: @base01;
-    color: @base03;
+    background-color: @base01; // background of selection bars
+    color: @base03; // foreground of selection bars? doesn't change much
   }
 
   .line-number.cursor-line-no-selection {
-    background-color: @base01;
+    background-color: #2e2e2e; // background of line number on cursor line
   }
 }
 
 .bracket-matcher {
-  background-color: @base1;
+  background-color: #2e2e2e; // background when cursor is on a matched bracket
   opacity: 0.7;
 }
 
 .comment {
-  color: @base01;
+  color: #7f9f7f; // comment
   font-style: italic;
 }
 
 .entity {
-  color: @yellow;
+  color: #dfdfbf; // class names, module names, etc
+
+  &.function {
+    color: #efef8f;
+  }
 }
 
 .keyword {
-  color: @green;
+  color: #ffcfaf; // language keyword
+
+  &.control {
+    color: #e3ceab;
+  }
 }
 
 .storage.type {
-  color: @green;
+  color: @magenta; // ??
 }
 
 .constant {
-  color: @yellow;
+  color: #dca3a3; // symbols, booleans, constants
+  font-weight: bold;
+  // bold
 
-  &.numeric,
+  &.symbol {
+    color: #dca3a3;
+  }
+
+  &.numeric {
+    color: #8cd0d3;
+    font-weight: normal;
+  }
   &.boolean {
-    color: @cyan;
+    color: #dca303; // booleans
+    font-weight: normal;
   }
 }
 
 .variable {
-  color: @blue;
-}
+  &.constant {
+    color: #dfdfbf;
+  }
+//   color: @blue; // method parameters
+ }
 
 .delimiter, .brace {
-  color: @red;
+  color: #8f8f8f;
 }
 
-.delimiter.period {
-  color: @green;
-}
+// .delimiter.period {
+//   color: @green;
+// }
 
 .invalid.deprecated {
   text-decoration: underline;
@@ -97,18 +124,24 @@
 }
 
 .string {
-  color: @cyan;
+  color: #cc9393;
 
-  .constant.character.escape {
-    color: @red;
-  }
+   .constant.character.escape {
+     color: #cfbfaf;
+   }
 
-  &.regexp {
-    color: @cyan;
+  // &.regexp {
+  //   color: @red;
+  //
+  //   .source.ruby.embedded,
+  //   .string.regexp.arbitrary-repitition {
+  //     color: @red;
+  //   }
+  // }
+}
 
-    .source.ruby.embedded,
-    .string.regexp.arbitrary-repitition {
-      color: @red;
-    }
+.punctuation {
+  &.definition {
+    color: #8f8f8f;
   }
 }
