@@ -1,14 +1,14 @@
 {
   "name": "zenburn",
   "theme": true,
-  "version": "0.0.0",
-  "description": "A short description of your theme",
+  "version": "0.0.1",
+  "description": "A Zenburn theme inspired by zenburn.vim",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your/repo.git"
+    "url": "https://github.com/atom/zenburn-syntax.git"
   },
   "bugs": {
-    "url": "https://github.com/your/repo/issues"
+    "url": "https://github.com/atom/zenburn-syntax/issues"
   },
   "engines": {
     "atom": ">26.0"
